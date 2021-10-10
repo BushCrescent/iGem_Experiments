@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiments</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"
+        integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <style>
+        #hero {
+            background-image: url(https://image.shutterstock.com/image-vector/pop-art-yellow-comics-book-260nw-1573509295.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 112px 56px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .svg-wrapper {
+            height: 60px;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 320px;
+        }
+
+        .shape {
+            fill: transparent;
+            stroke-dasharray: 140 540;
+            stroke-dashoffset: -474;
+            stroke-width: 8px;
+            stroke: #000000;
+        }
+
+        .text {
+            color: #000000;
+            font-family: "Permanent Marker", cursive;
+            font-size: 22px;
+            letter-spacing: 8px;
+            line-height: 32px;
+            position: relative;
+            top: -48px;
+            display: flex;
+            justify-content: center;
+        }
+
+        @keyframes draw {
+            0% {
+                stroke-dasharray: 140 540;
+                stroke-dashoffset: -474;
+                stroke-width: 8px;
+            }
+
+            100% {
+                stroke-dasharray: 760;
+                stroke-dashoffset: 0;
+                stroke-width: 2px;
+            }
+        }
+
+        .svg-wrapper:hover .shape {
+            -webkit-animation: 0.5s draw linear forwards;
+            animation: 0.5s draw linear forwards;
+        }
+
+        .logo {
+            width: 50px;
+        }
+
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font: 16px/1.3 sans-serif;
+        }
+
+        .CSSgal {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+
+        .CSSgal .slider {
+            height: 100%;
+            white-space: nowrap;
+            font-size: 0;
+            transition: 0.8s;
+        }
+
+
+        .CSSgal .slider>* {
+            font-size: 1rem;
+            display: inline-block;
+            white-space: normal;
+            vertical-align: top;
+            height: 100%;
+            width: 100%;
+            background: none 50% no-repeat;
+            background-size: cover;
+        }
+
+
+        .CSSgal .prevNext {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            width: 100%;
+            height: 0;
+        }
+
+        .CSSgal .prevNext>div+div {
+            visibility: hidden;
+        }
+
+        .CSSgal .prevNext a {
+            background: #fff;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            opacity: 0.7;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            left: 0;
+        }
+
+        .CSSgal .prevNext a:hover {
+            opacity: 1;
+        }
+
+        .CSSgal .prevNext a+a {
+            left: auto;
+            right: 0;
+        }
+
+
+        .CSSgal .bullets {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .CSSgal .bullets>a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-decoration: none;
+            text-align: center;
+            background: rgba(255, 255, 255, 1);
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+        }
+
+        .CSSgal .bullets>a+a {
+            background: rgba(255, 255, 255, 0.5);
+
+        }
+
+        .CSSgal .bullets>a:hover {
+            background: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .CSSgal>s:target~.bullets>* {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s5:target ~ .bullets >*:nth-child(5) {background: rgba(255, 255, 255,   1);}
+#s6:target ~ .bullets >*:nth-child(6) {background: rgba(255, 255, 255,   1);}
+#s7:target ~ .bullets >*:nth-child(7) {background: rgba(255, 255, 255,   1);}
+#s8:target ~ .bullets >*:nth-child(8) {background: rgba(255, 255, 255,   1);}
+#s9:target ~ .bullets >*:nth-child(9) {background: rgba(255, 255, 255,   1);}
+#s10:target ~ .bullets >*:nth-child(10) {background: rgba(255, 255, 255,   1);}
+
+        .CSSgal>s:target~.prevNext>* {
+            visibility: hidden;
+        }
+
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s5:target ~ .prevNext >*:nth-child(5) {visibility: visible;}
+#s6:target ~ .prevNext >*:nth-child(6) {visibility: visible;}
+#s7:target ~ .prevNext >*:nth-child(7) {visibility: visible;}
+#s8:target ~ .prevNext >*:nth-child(8) {visibility: visible;}
+#s9:target ~ .prevNext >*:nth-child(9) {visibility: visible;}
+#s10:target ~ .prevNext >*:nth-child(10) {visibility: visible;}
+
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+#s5:target ~ .slider {transform: translateX(-400%); -webkit-transform: translateX(-400%);}
+#s6:target ~ .slider {transform: translateX(-500%); -webkit-transform: translateX(-500%);}
+#s7:target ~ .slider {transform: translateX(-600%); -webkit-transform: translateX(-600%);}
+#s8:target ~ .slider {transform: translateX(-700%); -webkit-transform: translateX(-700%);}
+#s9:target ~ .slider {transform: translateX(-800%); -webkit-transform: translateX(-800%);}
+#s10:target ~ .slider {transform: translateX(-900%); -webkit-transform: translateX(-900%);}
+
+        .CSSgal {
+            color: #fff;
+            text-align: center;
+        }
+
+        .CSSgal .slider p {
+            margin-top: 10vh;
+            margin-left: 5vh;
+            margin-right: 5vh;
+            font-weight: 200;
+            letter-spacing: -0.06em;
+            word-spacing: 0.2em;
+            font-size: 1.7vw;
+        }
+
+        .CSSgal a {
+            border-radius: 50%;
+            margin: 0 3px;
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+        }
+
+        p{
+            font-family: 'Montserrat', sans-serif;
+            font-size: .5vw;
+            font-weight: bold;
+        }
+        h3{
+            margin-top: 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2vw;
+            font-weight: bold;
+            border-bottom-style: solid;
+            bottom:10px;
+        }
+        #content1{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content2{ position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content3{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content4{ position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content5{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content6{ position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content7{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content8{ position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content9{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        #content10{ position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+        /*Slideshow CSS*/
+
+
+        /*Button*/
+        .button {
+  background-color: white; /* Green */
+  border: none;
+  color: #F5E050;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bold;
+  margin-top:20px;
+  margin-bottom:0px;
+}
+
+.button1 {
+  background-color: #F5E050; 
+  color: white; 
+  border: 2px solid white;
+}
+
+.button1:hover {
+  background-color: white;
+  color: #F5E050;
+}
+        /*Button*/
+    </style>
+</head>
+
+<body>
+    <div id="hero">
+        <div class="svg-wrapper">
+            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                <rect class="shape" height="60" width="320" />
+            </svg>
+            <div class="text">Experiments</div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://2021.igem.org/Team:CCA_San_Diego">
+                <img class="logo" src="https://igem.org/wiki/images/9/9c/IGEM_logo_2500x2500.png" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://2021.igem.org/Team:CCA_San_Diego/Safety">Safety</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://2021.igem.org/Team:CCA_San_Diego/Human_Practices">Human Practices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://2021.igem.org/Team:CCA_San_Diego/Team">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Judging Forms</a>
+                    </li>
+                    <!--- 
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<div class="CSSgal">
+
+    <s id="s1"></s> 
+    <s id="s2"></s>
+    <s id="s3"></s>
+    <s id="s4"></s>
+    <s id="s5"></s>
+    <s id="s6"></s> 
+    <s id="s7"></s>
+    <s id="s8"></s>
+    <s id="s9"></s>
+    <s id="s10"></s>
+
+    <div class="slider">
+        <div class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                <h3>July 25 - July 31: Linearizing our Modified Backbone Fragment</h3>
+                <p>
+                    We ran PCR on our pRSII16 plasmid to linearize our desired backbone
+                    fragment free of the lacZalpha gene. The linearized plasmid was tested
+                    in a gel alongside a ladder and the original backbone fragment to
+                    verify if the amplification was successful.
+               
+                    The following day, three 50 uL PCR aliquots were prepared with
+                    backbones, resulting in three more linearized backbone solutions. The
+                    three solutions were also tested on the gel electrophoresis bed and
+                    showed successful PCRs.
+                
+                    We performed a DpnI digest on each of the three PCR aliquots and the
+                    initial one from the previous day to destroy any circular backbone
+                    plasmids.
+                </p>
+            </section>
+        </div>
+        <div class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                    <h3>August 1 - August 7: Collagen Gelification</h3>
+                    <p>
+                        Our goal for this week was to make a collagen gel out of the collagen
+                        powder we purchased. This would then serve as a proof of concept for
+                        our end goal: making bacterial collagen products. Initially, our
+                        collagen powder was 2% w/v, the molarities of our coagulation buffer
+                        were most likely inaccurate, and we also neglected prior incubation of
+                        the buffer to 37°C. These factors may have led to the failed
+                        coagulation when we put the acidic collagen solution in the neutral
+                        coagulation buffer.
+
+                        Surprisingly, the collagen did not congeal even after incubating it
+                        with 5 mL of 5.33%, 2%, and 1% glutaraldehyde solutions for 72 hours
+                        at 37oC. Glutaraldehyde is one of the strongest cross-linkers used in
+                        the literature, which led us to suspect the problem was with the
+                        collagen powder itself.
+
+                        For the rest of the week, we attempted to troubleshoot our previous
+                        experiments with different procedures and buffers - instead of using a
+                        fiber formation buffer from research gate, we used a PEG coagulation
+                        buffer from Cavallaro et. al, ___. Even so, the collagen did not
+                        coagulate. These results reinforced the notion that the collagen
+                        powder itself was the culprit.
+
+                        To test this, we obtained two 2.4 mg of bovine cartilage containing
+                        approximately 1.44 mg of Type I collagen. Since it was unable to
+                        dissolve in the acetic acid solution after intense vortexing, we let
+                        it dissolve in acetic acid for 72 hours.
+
+                        Additionally, we tested three different high-concentration solutions
+                        of our collagen powder so we could simultaneously test the variable of
+                        concentration.
+                    </p>
+            </section>
+        </div>
+        <div class = "content"  style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                    <h3>August 8 - August 15: Porcine Collagen Gelification</h3>
+                    <p>
+                        For this week, we continued our attempt at making gel. Due to failures
+                        from previous tests of concentration and source failure (a result of
+                        the impure collagen powder), we decided to shift to a new procedure:
+                        porcine collagen gelification for the purpose of deriving pure
+                        collagen. We used pig skin from a local butchery, using a porcine
+                        extraction procedure to obtain collagen. Since the powder that we had
+                        previously used in our gels had not worked, we hoped this would.
+
+                        Another important component in our collagen gelification attempts was
+                        determining the correct amount of crosslinking reagent to use. We
+                        conducted gelification trials with varying glutaraldehyde
+                        concentrations and various buffers: water, PEG coagulation buffer, and
+                        fiber formation buffer. We placed agitating collagen samples in petri
+                        dishes of the 3 buffers, and the collagen samples in the PEG
+                        coagulation buffer ended up the least dispersed and the most
+                        coagulated. This made PEG the best buffer for our purposes.
+
+                        We tried a different gel procedure that utilised pepsin, which was
+                        also unsuccessful. Therefore, we believe that the collagen powder and
+                        porcine collagen are at fault.
+
+                        When our gelification attempts failed for the porcine collagen, we ran
+                        an SDS page to verify the purity and presence of collagen proteins
+                        from our porcine collagen extraction. Our SDS page results do not
+                        correspond to the expected results. The collagen powder wells had the
+                        thickest bands, with double bands around 120kDa — the
+                        telopeptide-positive collagen had a semi-faint band around 120kDa.
+
+                        Meanwhile, we began preparations for next week's procedures. We intend
+                        to run Gibson assembly and yeast assembly in parallel for the coming
+                        week. We successfully made numerous E.coli-based agar plates and
+                        yeast-based agar plates. This will be necessary for the procedures
+                        next week by providing means of growing URA3 mutant strain yeast and
+                        E.coli.
+                    </p>
+            </section>
+        </div>
+        <div  class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                <h3>August 16 - August 21: 2nd Iteration of Porcine Gelification</h3>
+                <p>
+                    Our initially planned Gibson and yeast assemblies were delayed because
+                    the DNA shipment was cancelled. We maintained our focus and approached
+                    collagen gelification through a new procedure. The new method involved
+                    a chemical separation of pig skin mass through numerous acid baths.
+                    When purifying the collagen protein, we introduced samples with pepsin
+                    to compare the results of telopeptide-rich and -poor proteins.
+
+                    After pelleting cycles were completed, the collagen samples appeared
+                    to have salted out proteins as a precipitate. To confirm this, we ran
+                    an SDS page on telopeptide-rich, telopeptide-poor, and pure porcine
+                    samples, as well as our old hydrolyzed collagen and bovine collagen.
+                    The results were troubling, as they not only did not indicate any
+                    significant trend, but also were inconsistent with our previous SDS
+                    pages on bovine and hydrolyzed collagen.
+
+                    This suggests a problem with the SDS page itself, so we will continue
+                    with the gelification procedure.
+                </p>
+            </section>
+        </div>
+        <div  class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                <h3>August 23 - August 27: DNA</h3>
+                <p>
+                    This week, we worked with our newly arrived DNA. On August 23rd, we
+                    amplified the necessary primers needed. Furthermore, we worked on
+                    back-diluting the yeast in order to prepare it. After our DNA arrived,
+                    we amplified them via PCR and ran both Gibson and yeast assemblies in
+                    parallel in order to create our plasmid.
+
+                    After running the Gibson and the yeast assembly, we conducted an E.
+                    Coli transformation for self-closure and ran another PCR
+                    amplification. Afterwards, we noticed that our colonies were not
+                    growing after two days, and this phenomenon only occurred in the Amp
+                    (-) plates. We opted for a new yeast and Gibson assembly.
+
+                    These were incomplete and will be completed on August 30.
+                </p>
+            </section>
+        </div>
+        <div  class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                <h3>August 30 - September 4: DNA</h3>
+                <p>
+                    After finishing both the yeast and Gibson assembly, we ran an SDS page
+                    to see the results of the collagen gels and the bacterial
+                    transformation. There were no bands seen for the E. coli, but there
+                    were prominent bands visible for the collagen gels. The next day it
+                    was determined that the E. coli from the Gibson grew colonies, and a
+                    mini prep procedure was performed.
+
+                    We experimented with a new procedure for the gels, which showed
+                    successful gelification within 30 minutes of execution. However, it
+                    did not maintain a gel-like form for a 24 hour period.
+
+                    We will conduct further experimentation with the cosolvent ratios and
+                    the collagen ratios to find the optimal ratio for the gels. September
+                    7 - September 12: Troubleshooting and Collagen Gelification
+                    Experimentation We performed a Gibson assembly transformation and
+                    implemented PCR to amplify our gene fragments (for future use in
+                    Gibson and yeast assemblies). To troubleshoot what may have went wrong
+                    in last week's Gibson and yeast assemblies (the gel we did after the
+                    miniprep from last week showed no bands), we conducted E. coli
+                    transformation on the following:
+
+                    We used our PRS backbone as a positive control, last week's Gibson
+                    assembly products and no DNA as a negative control, and cells from
+                    last week's miniprep on a carbenicillin plate. Colonies grew on the
+                    carbenicillin plate, so we prepared for the miniprep by growing out
+                    cells in LB medium and amp. We then did miniprep to purify our
+                    plasmid.
+
+                    We further experimented on the new procedure for collagen gels
+                    involving a citrate buffer by changing the ratios of glycerol to
+                    collagen protein. Changes in collagen protein concentration showed a
+                    negligible change. Glycerol concentration proportionally increased
+                    viscosity of the sample, which, however, showed no indications of
+                    coagulation.
+                </p>
+            </section>
+          </div>
+          <div  class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                <h3>September 13 - September 18:</h3>
+                <p>
+                    The yeast grew on their plates, but were concentrated into clumps with
+                    dead cells. As a result, we had to do a patch on fresh plates to
+                    ensure the yeast could grow. However, the negative control without any
+                    DNA also grew on the URA- plates, indicating that either our plates or
+                    the yeast cells had a problem with them. After we did the patch, we
+                    noticed similar results, despite purifying protein lysates and DNA
+                    from the yeast. Running an SDS-PAGE on the DNA showed nuclear bands,
+                    likely due to a low concentration or too much chromosomal DNA.
+
+                    Thus, we did another yeast assembly with just the formed plasmid from
+                    Gibson assembly, but no colonies grew on our plates. As we got Sanger
+                    sequencing results showing faulty bp alignment, this may indicate that
+                    our initial Gibson assembly did not work.
+
+                    For collagen gelification, we took a step back in our approach and
+                    revised our previous PBS mix gel. We tested specifically for neutral
+                    pH's effect via NaOH balancing and received promising results; the
+                    gels coagulated instantly in thicker, more condensed blocks. The
+                    masses were more opaque and had a distinctive white color. Few tiny
+                    particles broke off until the gel had been in solution for an extended
+                    period of time. We concluded that changing the pH to neutral was the
+                    solution for strong gelification but pH testing on the citrate gels
+                    showed no response.
+                </p>
+            </section>
+          </div>
+          <div  class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                <h3>September 20 - September 26:</h3>
+                <p>
+                    DNA: This week we made new plates for our yeast assembly with various
+                    amino acids, excluding uracil, yeast nitrogen base, agar, and
+                    dextrose. We made new plates because yeast colonies were growing on
+                    our URA3(-) plates, which shouldn't have been happening, therefore we
+                    concluded that our plates were old and contaminated with uracil. We
+                    did a Gibson assembly with both 2 fragments and 3 fragments and
+                    transformation again, and yeast assembly transformation. After
+                    transformation, we grew yeast cells to do a miniprep to purify our
+                    plasmid. We did PCR amplification of our gene fragments and purified
+                    our gene fragments to do Gibson assembly again. Small colonies grew on
+                    the plates with the yeast colonies, but we waited an extra day for
+                    more growth of colonies to do a yeast DNA extraction to do a gel
+                    visualization. Lastly, we ordered primers to verify the yeast
+                    assembly.
+
+                    Implementation: Our best results were from the CP-C vials with pH.
+                    However, they all lost the majority of the coagulation after being
+                    saturated by water for an extended period of time. Our rationale was
+                    that removing the supernatant would prevent this degradation of
+                    coagulation. We centrifuged and discarded the supernatant, leaving
+                    behind pancakes of pure white collagen.
+                </p>
+            </section>
+    
+          </div>
+          <div  class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                <h3>September 27 - October 3</h3>
+                <p>
+                    As the last results of the Gibson Assembly were disappointing, we
+                    decided to redo a Gibson and a Yeast transformation using fresh stocks
+                    of reagents and the two-fragment and three-fragment assembly, which
+                    had the highest potential for successful transformation. Upon
+                    verification with PCR, our two-fragment Gibson Assembly was the only
+                    fragment that contained the correct length of overlap DNA, and thus
+                    was used in another Yeast Assembly and sent for sequencing.
+                </p>
+            </section>
+    
+          </div>
+          <div  class = "content" style="background:#F5E050;">
+            <section>
+                <button class="button button1" onclick="window.open('https://benchling.com/gmo_ravens/f_/Lpc0UPCo-protocols/?filter=section%3Aall%3Btypes%3AIS_ONE_OF%3Afolder%2Centry%2Cprotocol%2Cbasic_folder_item%2Cprotein%2Cmixture%2Csequence%2Coligo%3Bfolder%3Alib_Lpc0UPCo%3BarchivePurposes%3AIS_ONE_OF%3ANOT_ARCHIVED&offset=0&limit=25&sorts=&q=&v=2');">Protocols</button>
+                <h3>Ocotober 4 - October 8</h3>
+                <p>
+                    We first started by checking our sequencing results from our Gibson
+                    assembly and picking colonies from the yeast plates to run PCR on
+                    overhangs to verify if the transformation worked. As the E. coli we
+                    believed that the assembly was successful, however the transformation
+                    was not successful. We used genomic yeast ethanol precipitation to
+                    extract the DNA for yeast assembly and LiOAc transformation. We
+                    performed PCR on _____, then prepared for a yeast miniprep and
+                    performed a gel using the pcr from the previous day. We extracted
+                    yeast cells from the plates that grew for 2 days following the
+                    transformation to do a yeast miniprep with in order to do a gel.
+                    Following our gel, we did an SDS page. We did a protein precipitation
+                    with zymolyase to break the yeast cell walls to do the SDS page. We
+                    streaked an E. coli plate to sequence with GIB for plasmid sequencing.
+                </p>
+            </section>
+          </div>
+    </div>
+
+    <div class="prevNext">
+        <div><a href="#s10"></a><a href="#s2"></a></div>
+      <div><a href="#s1"></a><a href="#s3"></a></div>
+      <div><a href="#s2"></a><a href="#s4"></a></div>
+      <div><a href="#s3"></a><a href="#s5"></a></div>
+      <div><a href="#s4"></a><a href="#s6"></a></div>
+      <div><a href="#s5"></a><a href="#s7"></a></div>
+      <div><a href="#s6"></a><a href="#s8"></a></div>
+      <div><a href="#s7"></a><a href="#s9"></a></div>
+      <div><a href="#s8"></a><a href="#s10"></a></div>
+      <div><a href="#s9"></a><a href="#s1"></a></div>
+    </div>
+
+    <div class="bullets">
+    <a href="#s1">1</a>
+      <a href="#s2">2</a>
+      <a href="#s3">3</a>
+      <a href="#s4">4</a>
+      <a href="#s5">5</a>
+      <a href="#s6">6</a>
+      <a href="#s7">7</a>
+      <a href="#s8">8</a>
+      <a href="#s9">9</a>
+      <a href="#s10">10</a>
+    </div>
+
+</div>
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+<!-- Slideshow-->
+
+
+</html>
